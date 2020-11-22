@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <!-- <link rel="stylesheet" href="./assets/vendors/splide-core.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+        background-color: #ccbfb6;
+      }
+      .swiper-slide {
+        height: 100%;
+        /* min-height: 300px; */
+      }
+      .swiper-slide img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+      }
+      .swiper-lazy-preloader {
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-banner">
+      <div class="main-banner__content">
+        <div class="main-banner__slider swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <picture>
+                <source
+                  srcset="
+                    ./assets/images/desktop-banner-1.png 1x,
+                    ./assets/images/desktop-banner-1.png 2x
+                  "
+                  media="(min-width: 560px)"
+                />
+
+                <img
+                  data-src="./assets/images/mobile-banner-1.png"
+                  class="swiper-lazy"
+                />
+              </picture>
+
+              <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                data-srcset="
+                  ./assets/images/mobile-banner-2.png 500w,
+                  ./assets/images/desktop-banner-2.png 1200w
+                "
+                sizes="100vw"
+                class="swiper-lazy"
+              />
+              <div class="swiper-lazy-preloader"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      /* document.addEventListener("DOMContentLoaded", function () {
+        new Splide(".splide", {
+          lazyLoad: true,
+        }).mount();
+      }); */
+      var mySwiper = new Swiper(".main-banner__slider", {
+        autoHeight: true,
+        // Disable preloading of all images
+        preloadImages: false,
+        lazy: {
+          loadPrevNext: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
