@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/dotenv,vscode,webstorm
 # Edit at https://www.toptal.com/developers/gitignore?templates=dotenv,vscode,webstorm
 
+### config files ###
+config.yml
+
 ### dotenv ###
 .env
 

@@ -1,0 +1,63 @@
+<h1>Banner olakease</h1>
+<div class="main-banner">
+  <div class="main-banner__content">
+    <div class="main-banner__slider swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide custom">
+          <picture>
+
+            <source
+              srcset="
+                ./assets/images/desktop-banner-1.png 1x,
+                ./assets/images/desktop-banner-1.png 2x
+              "
+              media="(min-width: 560px)"
+            />
+
+            <img
+              data-src="./assets/images/mobile-banner-1.png"
+              class="swiper-lazy"
+            />
+          </picture>
+
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            data-srcset="
+                ./assets/images/mobile-banner-2.png 500w,
+                ./assets/images/desktop-banner-2.png 1200w
+              "
+            sizes="100vw"
+            class="swiper-lazy"
+          />
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Golive Slider",
+    "settings": [
+        {
+            "id": "banners",
+            "type": "text",
+            "label": "Aqui",
+            "default": "hola"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Golive Slider",
+            "category": "Carousel",
+            "settings": { 
+
+            }
+        }
+    ]
+    
+}
+{% endschema %}
